@@ -6,11 +6,12 @@ var _ = require('underscore');
 
 //Local Inports
 var model = require('./models/photo-model');
-var displayComponent = require('./components/pic-display');
-var formComponent = require('./components/pic-form');
+var PhotoItem = require('./components/pic-display');
+var PictureForm = require('./components/pic-form');
 
-//Put the coin in the machine
-// $(function(){
-//   var inputForm = new formComponent();
-//   console.log(inputForm);
-// })
+var newPhoto = new model.PhotoModel;
+var newPhotoCollection = new model.PhotoCollection;
+
+newPhoto = {
+  caption: 'caption here'
+}

@@ -9,7 +9,7 @@ var PhotoModel = Backbone.Model.extend({
 //Define the collection
 var PhotoCollection = Backbone.Model.extend({
   model: PhotoModel,
-  url: 'https://unsplash.com/collections/203/explore-canada'
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/andrew-image-board'
 });
 
 //Exports

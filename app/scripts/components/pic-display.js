@@ -12,14 +12,38 @@ var photosCollection = new model.PhotoCollection();
 var PhotoItem = React.createClass({
   render: function(){
     return (
-      <view>
-        <image
-          source={{uri: 'https://unsplash.com/photos/1EYMue_AwDw'}}
-        />
-      </view>
-    );
+      <div>
+        <img />
+        <imageCaption />
+      </div>
+    )
   }
 });
+
+//Create the Photo List
+var PhotoList = React.createClass({
+  render: function(){
+    mixins: [Backbone.React.Component.mixin]
+    var photosList = this.getCollection().map(function(photo){
+      return (
+        <PhotoItem model={photo} />
+      )
+    });
+    return(
+      <ul>
+        {photosList}
+      </ul>
+    )
+  }
+});
+
+//Create Photo Caption
+var PhotoCaption = React.createClass({
+  render: function(){
+    mixins: [Backbone.React.Component.mixin]
+    return(<p>{this.getModel().get('caption')}</p>);
+  }
+})
 
 ReactDOM.render(
   <PhotoItem />,
